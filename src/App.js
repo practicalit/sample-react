@@ -11,6 +11,11 @@ function App() {
   //let acceptedText = "initial value"
 
   const [acceptedText, setAcceptedState] = useState("initial value");
+  const commonDataForChildren = {
+    color: "green",
+    name: "loggedUsername",
+    email: "some@thepracticalit.com"
+  };
 
   let styleExample = {
     font50: {
@@ -31,12 +36,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <div>Accepted is {acceptedText}</div>
-        <Another />
-        <ClassHello />
-        <div style={styleExample.font50}>This is style from object</div>
+      {/* <div>Accepted is {acceptedText}</div> */}
+        <Another commonData={commonDataForChildren} title="another"/>
+         <ClassHello commonData={commonDataForChildren} title="class hello"/>
+        {/*<div style={styleExample.font50}>This is style from object</div>
         <div><button onClick={btnHandler}>Click me</button></div>
-        <div><input type="text" onKeyUp={textHandler} /></div>
+        <div><input type="text" onKeyUp={textHandler} /></div> */}
       </header>
     </div>
   );
