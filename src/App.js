@@ -11,6 +11,10 @@ import Notification from './tutorial-components/Notification';
 function App() {
   //let acceptedText = "initial value"
 
+  let topics = [
+    "html", 'css', 'js', 'tags', 'elements', 'attributes', 'functions'
+  ]
+
   const [acceptedText, setAcceptedState] = useState("initial value");
   const [acceptedNumber, setAcceptedNumber] = useState(0);
   const [justLoaded, setJustLoaded] = useState(true);
@@ -56,6 +60,14 @@ function App() {
       <Notification message="Initial default message [success]" success={true} />
       <Notification message="Successfully Registered [error]" success={false}/>
       <Notification message="Invalid input, try again [success]" success={true}/>
+      <h3>Topics we have covered so far, but not limited to,.. </h3>
+      
+        {
+          topics.map( topic => {
+          return <div>{topic}</div>
+          })
+        }
+      
     </div>
   );
 }
